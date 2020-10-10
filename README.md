@@ -1,38 +1,35 @@
 # OhGodAnETHlargementPill-r2
 OhGodAnETHlargementPill-r2
-installation
+安装：
 cd /opt/
 sudo mkdir ./tabletka
 cd ./tabletka/
-sudo wget https://github.com/format37/OhGodAnETHlargementPill-r2/raw/master/OhGodAnETHlargementPill-r2
+sudo wget https://github.com/QQ40451/OhGodAnETHlargementPill-r2/raw/master/OhGodAnETHlargementPill-r2
 sudo chmod +x ./OhGodAnETHlargementPill-r2
-Systemd install
+安装服务：
 sudo nano /etc/systemd/system/ethpill.service
-Paste this:
+黏贴以下内容:
 
 [Unit]
 Description=OhGodAnETHlargementPill-r2
-
 [Service]  
 Type=simple
 ExecStart=/opt/tabletka/OhGodAnETHlargementPill-r2
 Restart=on-failure
-
 User=root 
-
 [Install]
 WantedBy=multi-user.target
-Then
 
+
+运行:
 sudo systemctl daemon-reload
 sudo systemctl start ethpill
 sudo systemctl enable ethpill
-Troubleshooting
-Does your ETHlargement not work as expected? You're likely running an older memory revision. Here at OhGodACompany, we believe in promotiong a healthy mining lifestyle - that's why we've got a solution for our senior users, too!
 
-With the use of --revA, you can specify which device should be fed our senior solution. If, for example, GPU 0, 3 and 4 aren't the young studs you thought they were, feed them with the following commands:
+常见问题：
 
+可以用参数 --revA,来指定哪些卡加载补丁.例如 GPU 0, 3 和 4 需要打补丁的话这样运行：
 ./OhGodAnETHlargementPill-r2 --revA 0,3,4   
-Be sure to leave ETHlargement running in the background, so your NVIDIA noodle can aldente.
-
+注意：补丁需要保持再后台运行。
+状态查看:
 sudo systemctl status ethpill
